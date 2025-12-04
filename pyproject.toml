@@ -19,3 +19,15 @@ members = [
 
 [tool.uv.sources]
 lightglue = { workspace = true, editable = true }
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = []  # 패키지 자동 검색 안 함
+py-modules = ["project_root_finder"]  # 이 파일만 모듈로 등록
+
+# data, output 등은 무시
+[tool.setuptools.package-data]
+"*" = []

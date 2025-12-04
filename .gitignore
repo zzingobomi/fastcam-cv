@@ -1,9 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
 # virtual environments
 venv/
 .venv/
 
 # data
 data/
+
+# output
+output/
 
 # LightGlue
 LightGlue/

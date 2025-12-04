@@ -9,3 +9,9 @@ git clone https://github.com/cvg/LightGlue.git
 cd LightGlue
 uv pip install -e .
 ```
+
+- project_root_finder 를 위해
+
+```
+uv pip install -e .
+```
