@@ -1,0 +1,21 @@
+[project]
+name = "fastcam-cv"
+version = "0.1.0"
+description = ""
+requires-python = ">=3.11"
+
+dependencies = [
+    "lightglue",
+    "numpy",
+    "opencv-python",
+    "torch",
+    "torchvision",
+]
+
+[tool.uv.workspace]
+members = [
+    "LightGlue",
+]
+
+[tool.uv.sources]
+lightglue = { workspace = true, editable = true }

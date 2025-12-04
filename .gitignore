@@ -1,0 +1,9 @@
+# virtual environments
+venv/
+.venv/
+
+# data
+data/
+
+# LightGlue
+LightGlue/
