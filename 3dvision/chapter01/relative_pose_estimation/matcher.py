@@ -1,4 +1,5 @@
 import torch
+import cv2
 
 from lightglue import SuperPoint, LightGlue
 from lightglue import viz2d
@@ -36,6 +37,15 @@ def compute_correspondence_matching(src_path, dst_path, max_kpts=1024):
     dst_results = matched_dst_kpts.cpu().numpy()
 
     return src_results, dst_results
+
+def reject_outliers(src_kpts, dst_kpts, ransac_threshold=3.0):
+    mask = cv2.findFundamentalMat(src_kpts, dst_kpts, cv2.FM_RANSAC, ransac_threshold)[1]
+    mask = mask.ravel().astype(bool)
+
+    src_result = src_kpts[mask]
+    dst_result = dst_kpts[mask]
+
+    return src_result, dst_result
 
 def visualize(src_path, dst_path, src_kpts, dst_kpts):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
